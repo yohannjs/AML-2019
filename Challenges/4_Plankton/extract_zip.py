@@ -1,6 +1,7 @@
 import zipfile
 from io import BytesIO
 from PIL import Image
+from tqdm import tqdm
 
 def extract_zip_to_memory(input_zip):
     '''
@@ -12,7 +13,7 @@ def extract_zip_to_memory(input_zip):
     returns (dict): {filename (string): image_file (bytes)}
     '''
     input_zip=zipfile.ZipFile(input_zip)
-    return {name: BytesIO(input_zip.read(name)) for name in input_zip.namelist() if name.endswith('.jpg')}
+    return {name: BytesIO(input_zip.read(name)) for name in tqdm(input_zip.namelist()) if name.endswith('.jpg')}
 
 
 # imgFiles = extract_zip_to_memory("imgs.zip")
