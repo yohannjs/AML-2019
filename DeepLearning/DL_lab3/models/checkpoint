@@ -1,2 +1,2 @@
-model_checkpoint_path: "vanilla.ckpt"
-all_model_checkpoint_paths: "vanilla.ckpt"
+model_checkpoint_path: "gru.ckpt"
+all_model_checkpoint_paths: "gru.ckpt"
